@@ -1,5 +1,13 @@
-import React from 'react';
+import React, { lazy } from 'react';
+
+const Routes = lazy(() =>
+  import(/*webpackChunkName: "App" */ './AppRoutes/Index')
+);
 
 export default function App() {
-  return <>App</>;
+  return (
+    <>
+      <Routes />
+    </>
+  );
 }

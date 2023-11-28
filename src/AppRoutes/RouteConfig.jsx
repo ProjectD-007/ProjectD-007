@@ -1,5 +1,5 @@
-import { HomePageLayout } from './Components';
+import { HomePageLayout, HomePage } from './Components';
 
 export const PublicRoutes = [
-  { path: '/', component: HomePageLayout, layout: HomePageLayout },
+  { path: '/', component: HomePage, layout: HomePageLayout, roules: [] },
 ];
