@@ -1,0 +1,29 @@
+@import './theme.scss';
+
+* {
+  box-sizing: border-box;
+  padding: 0;
+  margin: 0;
+}
+
+.flexWithRow {
+  display: flex;
+  flex-direction: row;
+}
+
+.spaceBetween {
+  justify-content: space-between;
+}
+
+.alignItemsCenter {
+  align-items: center;
+}
+
+// Element Custom css
+.ulEl {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  color: $text_light_color;
+  font-weight: 600;
+}

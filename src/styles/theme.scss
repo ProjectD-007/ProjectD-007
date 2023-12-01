@@ -1,0 +1,25 @@
+$text_dark_color: #282828;
+$text_light_color: #626262;
+
+$light_bg_color: #f4fffb;
+$text_white_color: #fff;
+
+.textDark {
+  color: $text_dark_color;
+}
+
+.textLight {
+  color: $text_light_color;
+}
+
+.textWhite {
+  color: $text_white_color;
+}
+
+.bg_light_color {
+  background-color: $light_bg_color;
+}
+
+#activeLinkColor {
+  color: #008687;
+}
