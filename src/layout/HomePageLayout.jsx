@@ -6,9 +6,7 @@ export default function HomePageLayout({ children }) {
   return (
     <>
       <Header />
-      <Grid container>
-        <main>{children}</main>
-      </Grid>
+      <main>{children}</main>
       <Footer />
     </>
   );

@@ -13,6 +13,8 @@ import {
 import styles from './Header.module.scss';
 import { useTheme } from '@emotion/react';
 import AsideDrawer from './AsideDrawer';
+import CommonIconButton from '../../Common/CommonIconButton';
+import { NavigateNext } from '@mui/icons-material';
 
 const navigationLinks = [
   { title: 'Home', active: true },
@@ -38,7 +40,7 @@ export default function Header() {
 
   const RenderIcons = () => {
     return icons.map((icon, index) => (
-      <Typography component={'li'} variant='li' key={index}>
+      <Typography component={'li'} variant="li" key={index}>
         <Typography
           component={'img'}
           src={icon.icon}
@@ -70,19 +72,19 @@ export default function Header() {
             >
               <Box className={styles.logoArea}>
                 <Typography
-                  variant='img'
+                  variant="img"
                   component={'img'}
-                  src='/assets/images/logo.webp'
+                  src="/assets/images/logo.webp"
                 />
               </Box>
 
               {!isMatch ? (
                 <Box component={'nav'} className={styles.navigation}>
-                  <Typography component={'ul'} variant='ul'>
+                  <Typography component={'ul'} variant="ul">
                     {navigationLinks.map((item, index) => (
                       <Typography
                         component={'li'}
-                        variant='li'
+                        variant="li"
                         key={index}
                         id={item?.active && 'activeLinkColor'}
                       >

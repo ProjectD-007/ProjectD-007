@@ -10,5 +10,11 @@ export const theme = createTheme({
       main: '#282828',
       light: '#626262',
     },
+
+    others: {
+      main: '#F4FFFB',
+      background: '#F4FFFB',
+      white: '#fff',
+    },
   },
 });
