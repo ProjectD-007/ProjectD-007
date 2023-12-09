@@ -1,3 +1,22 @@
 #screenTopBar {
   background-color: #069991;
 }
+
+.heroarea {
+  background-color: #f4fffb;
+
+  .wrapper {
+    background: linear-gradient(
+      180deg,
+      #008687 0%,
+      #0ea7ad 0.01%,
+      #008d7b 100%
+    );
+    margin: 2rem auto;
+    border-radius: 30px;
+
+    & .title {
+      font-size: 45px;
+    }
+  }
+}

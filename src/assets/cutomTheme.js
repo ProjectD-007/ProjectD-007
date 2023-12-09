@@ -16,5 +16,27 @@ export const theme = createTheme({
       background: '#F4FFFB',
       white: '#fff',
     },
+
+    textColor: {
+      primary: '#282828',
+      secondary: '#B7BAC3',
+      white: '#EDEEFC',
+    },
+
+    buttonBackgrounds: {
+      primary: 'yellow',
+    },
+  },
+  components: {
+    MuiButton: {
+      defaultProps: {
+        disableRipple: true,
+      },
+      styleOverrides: {
+        root: {
+          textTransform: 'none',
+        },
+      },
+    },
   },
 });

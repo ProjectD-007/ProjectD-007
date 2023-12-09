@@ -1,11 +1,4 @@
-import { Button, styled } from '@mui/material';
-
-const StyledButton = styled(Button)({
-  '.MuiButton-root': {
-    textTransform: 'capitalize',
-    color: 'red',
-  },
-});
+import { Button } from '@mui/material';
 
 export default function CommonButton({
   children,
@@ -14,18 +7,20 @@ export default function CommonButton({
   size = 'medium',
   color = 'primary',
   isDisabled = false,
+  ...rest
 }) {
   return (
     <>
-      <StyledButton
+      <Button
         variant={variant}
         sx={sx}
         size={size}
         disabled={isDisabled}
         color={color}
+        {...rest}
       >
         {children}
-      </StyledButton>
+      </Button>
     </>
   );
 }
