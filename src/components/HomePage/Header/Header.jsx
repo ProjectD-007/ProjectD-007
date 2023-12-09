@@ -1,4 +1,3 @@
-import React, { useEffect, useState } from 'react';
 import {
   AppBar,
   Box,
@@ -13,8 +12,6 @@ import {
 import styles from './Header.module.scss';
 import { useTheme } from '@emotion/react';
 import AsideDrawer from './AsideDrawer';
-import CommonIconButton from '../../Common/CommonIconButton';
-import { NavigateNext } from '@mui/icons-material';
 
 const navigationLinks = [
   { title: 'Home', active: true },

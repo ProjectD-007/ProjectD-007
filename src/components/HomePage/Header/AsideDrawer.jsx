@@ -21,7 +21,7 @@ export default function AsideDrawer({ list, icons }) {
         PaperProps={{
           sx: {
             width: '500px',
-            maxWidth: '99%',
+            maxWidth: '85%',
           },
         }}
       >
@@ -40,7 +40,7 @@ export default function AsideDrawer({ list, icons }) {
                 <ListItemButton>
                   <Typography
                     component={'img'}
-                    variant='img'
+                    variant="img"
                     src={icon}
                     {...props}
                   />

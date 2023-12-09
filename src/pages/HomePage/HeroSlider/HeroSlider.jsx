@@ -50,8 +50,8 @@ export default function HeroSlider() {
       <Container maxWidth={'xxl'} className={styles.heroarea}>
         <Container maxWidth={'xl'} className={styles.wrapper}>
           <Container maxWidth="lg">
-            <Grid container alignItems={'center'}>
-              <Grid item xs={12} md={6}>
+            <Grid container alignItems={'center'} mt={6}>
+              <Grid item xs={12} md={6} mt={3}>
                 <Typography
                   variant="h3"
                   component={'h1'}
@@ -91,7 +91,7 @@ export default function HeroSlider() {
             </Grid>
           </Container>
         </Container>
-        <Grid container justifyContent={'center'}>
+        <Grid container justifyContent={'center'} pb={3}>
           <Stack direction={'row'} spacing={1}>
             <Typography
               component={'img'}
