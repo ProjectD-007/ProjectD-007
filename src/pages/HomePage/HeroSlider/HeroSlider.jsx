@@ -1,11 +1,12 @@
-import { Box, Container, Grid, Paper, Stack, Typography } from '@mui/material';
+import { Container, Grid, Stack, Typography } from '@mui/material';
 import { NavigateNext } from '@mui/icons-material';
-import CommonIconButton from '../components/Common/CommonIconButton';
 
-import styles from './HomePage.module.scss';
-import CommonButton from '../components/Common/CommonButton';
+import CommonIconButton from '../../../components/Common/CommonIconButton';
+import CommonButton from '../../../components/Common/CommonButton';
 
-export default function HomePage() {
+import styles from './HeroSlider.module.scss';
+
+export default function HeroSlider() {
   return (
     <>
       <Container maxWidth="xxl" sx={{ left: 'auto' }} id={styles.screenTopBar}>
