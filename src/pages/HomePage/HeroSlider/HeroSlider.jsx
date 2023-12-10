@@ -57,7 +57,7 @@ export default function HeroSlider() {
                   component={'h1'}
                   fontWeight="600"
                   className={styles.title}
-                  color={'textColor.white'}
+                  color={'text.white'}
                 >
                   Consult top doctors online for any health concern
                 </Typography>
@@ -66,7 +66,7 @@ export default function HeroSlider() {
                   variant="p"
                   component="p"
                   my={3}
-                  color={'textColor.white'}
+                  color={'text.white'}
                 >
                   Access video consultation with India’s top doctors on the
                   Practo app. Connect with doctors online, available 24/7, from
@@ -76,7 +76,7 @@ export default function HeroSlider() {
                   children={'Schedule call'}
                   size="large"
                   color="others"
-                  sx={{ fontWeight: 600, color: 'textColor.primary' }}
+                  sx={{ fontWeight: 600, color: 'text.primary' }}
                   // disableElevation={true}
                 />
               </Grid>

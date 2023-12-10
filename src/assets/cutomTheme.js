@@ -13,11 +13,10 @@ export const theme = createTheme({
 
     others: {
       main: '#F4FFFB',
-      background: '#F4FFFB',
       white: '#fff',
     },
 
-    textColor: {
+    text: {
       primary: '#282828',
       secondary: '#B7BAC3',
       white: '#EDEEFC',
@@ -35,6 +34,14 @@ export const theme = createTheme({
       styleOverrides: {
         root: {
           textTransform: 'none',
+        },
+      },
+    },
+
+    MuiOutlinedInput: {
+      styleOverrides: {
+        input: {
+          padding: '11px 16px',
         },
       },
     },

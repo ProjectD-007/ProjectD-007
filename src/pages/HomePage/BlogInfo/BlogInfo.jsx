@@ -33,10 +33,10 @@ export default function BlogInfo() {
         </Grid>
 
         <Grid container justifyContent={'center'} gap={3}>
-          {BlogData.map((data) => {
+          {BlogData.map((data, index) => {
             return (
-              <Grid item xs={12} md={3} lg={3}>
-                <Box key={data.id}>
+              <Grid item xs={12} md={3} lg={3} key={index}>
+                <Box>
                   <Card>
                     <Typography
                       variant="img"
