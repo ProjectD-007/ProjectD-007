@@ -1,15 +1,22 @@
-import { Button, Grid, IconButton, Stack, Typography } from '@mui/material';
+import { Box, Button, Grid, Stack, Typography } from '@mui/material';
 import { aboutScreen } from './Data';
 
 import { HiArrowLongRight } from 'react-icons/hi2';
 
 import styles from './AboutSection.module.scss';
+import { Fragment } from 'react';
 
 export default function AboutSection() {
   return (
     <>
-      <Grid container justifyContent={'center'} alignItems={'center'} mt={6}>
-        <Grid item xs={12} sm={5} textAlign={'center'}>
+      <Grid
+        container
+        justifyContent={'center'}
+        alignItems={'center'}
+        mt={6}
+        mb={4}
+      >
+        <Grid item xs={12} md={8} lg={6} textAlign={'center'}>
           <Typography
             component={'h3'}
             variant="h3"
@@ -34,17 +41,23 @@ export default function AboutSection() {
             specialists
           </Typography>
         </Grid>
+      </Grid>
 
-        <Grid item xs={12} sm={8}>
-          <Stack direction={'row'} spacing={3}>
-            {aboutScreen.map((box) => {
+      <Grid container justifyContent={'center'} mb={4} p={2}>
+        <Grid item xs={12} lg={8}>
+          <Stack
+            gap={2}
+            sx={{
+              flexDirection: {
+                xs: 'column',
+                md: 'row',
+              },
+            }}
+          >
+            {aboutScreen.map((box, index) => {
               return (
-                <>
-                  <Stack
-                    direction={'column'}
-                    className={styles.highlightBox}
-                    textAlign={'left'}
-                  >
+                <Fragment key={index}>
+                  <Box className={styles.highlightBox} p={3} borderRadius={5}>
                     <Typography
                       component={'img'}
                       src={'/assets/images/profile.svg'}
@@ -63,8 +76,9 @@ export default function AboutSection() {
 
                     <Typography
                       component={'p'}
-                      variant="p"
+                      variant="span"
                       color={'secondary.light'}
+                      my={2}
                     >
                       Whether you're living in India or abroad, easily connect
                       with country's top doctors in all specialty areas
@@ -72,17 +86,14 @@ export default function AboutSection() {
 
                     <Button
                       variant="text"
-                      size="medium"
-                      endIcon={
-                        <IconButton>
-                          <HiArrowLongRight />
-                        </IconButton>
-                      }
+                      size="large"
+                      endIcon={<HiArrowLongRight />}
+                      sx={{ fontWeight: 600 }}
                     >
                       Connect
                     </Button>
-                  </Stack>
-                </>
+                  </Box>
+                </Fragment>
               );
             })}
           </Stack>
