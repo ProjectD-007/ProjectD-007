@@ -1,4 +1,3 @@
-import { useTheme } from '@mui/material';
 import React, { lazy } from 'react';
 import './styles/custom.scss';
 
@@ -7,8 +6,6 @@ const Routes = lazy(() =>
 );
 
 export default function App() {
-  const theme = useTheme();
-
   return (
     <>
       <Routes />
