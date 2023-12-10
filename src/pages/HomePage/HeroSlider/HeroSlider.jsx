@@ -9,7 +9,7 @@ import styles from './HeroSlider.module.scss';
 export default function HeroSlider() {
   return (
     <>
-      <Container maxWidth="xxl" sx={{ left: 'auto' }} id={styles.screenTopBar}>
+      <Container maxWidth="xxl" id={styles.screenTopBar}>
         <Grid container mt={10.8} justifyContent={'center'}>
           <Grid item xs={12} md={12} lg={8}>
             <Stack
