@@ -3,6 +3,8 @@ import {
   Box,
   Container,
   CssBaseline,
+  List,
+  ListItem,
   Stack,
   Toolbar,
   Typography,
@@ -12,6 +14,7 @@ import {
 import styles from './Header.module.scss';
 import { useTheme } from '@emotion/react';
 import AsideDrawer from './AsideDrawer';
+import { AccountBalanceWallet, Notifications } from '@mui/icons-material';
 
 const navigationLinks = [
   { title: 'Home', active: true },
@@ -21,8 +24,12 @@ const navigationLinks = [
 ];
 
 const icons = [
-  { icon: '/assets/images/notification-bell.svg' },
-  { icon: '/assets/images/wallet.svg' },
+  {
+    MUIIcon: Notifications,
+  },
+  {
+    MUIIcon: AccountBalanceWallet,
+  },
   {
     icon: '/assets/images/profile.svg',
     props: {
@@ -36,16 +43,34 @@ export default function Header() {
   const isMatch = useMediaQuery(theme.breakpoints.down('985'));
 
   const RenderIcons = () => {
-    return icons.map((icon, index) => (
-      <Typography component={'li'} variant="li" key={index}>
-        <Typography
-          component={'img'}
-          src={icon.icon}
-          {...icon.props}
-          key={index}
-        />
-      </Typography>
-    ));
+    return (
+      <Stack
+        direction={'row'}
+        spacing={2}
+        ml={4}
+        alignItems={'center'}
+        fontSize={'2rem'}
+      >
+        {icons.map((icon, index) => {
+          return icon?.MUIIcon ? (
+            <icon.MUIIcon
+              key={index}
+              htmlColor="#029183"
+              fontSize="inherit"
+              className={'cursor_pointer'}
+            />
+          ) : (
+            <Box
+              component={'img'}
+              src={icon.icon}
+              {...icon.props}
+              key={index}
+              className="cursor_pointer"
+            />
+          );
+        })}
+      </Stack>
+    );
   };
 
   return (
@@ -76,22 +101,37 @@ export default function Header() {
               </Box>
 
               {!isMatch ? (
-                <Box component={'nav'} className={styles.navigation}>
-                  <Typography component={'ul'} variant="ul">
+                <Stack
+                  direction={'row'}
+                  component={'nav'}
+                  className={styles.navigation}
+                >
+                  <List
+                    sx={{
+                      color: 'secondary.main',
+                      display: 'flex',
+                      alignItems: 'center',
+                      justifyContent: 'space-between',
+                    }}
+                  >
                     {navigationLinks.map((item, index) => (
-                      <Typography
-                        component={'li'}
-                        variant="li"
+                      <ListItem
                         key={index}
                         id={item?.active && 'activeLinkColor'}
+                        color="secondary"
+                        sx={{
+                          fontSize: '16px',
+                          fontWeight: 600,
+                          width: 'auto',
+                        }}
                       >
                         {item.title}
-                      </Typography>
+                      </ListItem>
                     ))}
 
                     {RenderIcons()}
-                  </Typography>
-                </Box>
+                  </List>
+                </Stack>
               ) : (
                 <AsideDrawer list={navigationLinks} icons={icons} />
               )}

@@ -1,12 +1,14 @@
 import { Menu } from '@mui/icons-material';
 import {
+  Box,
   Drawer,
+  Grid,
   IconButton,
   List,
   ListItem,
   ListItemButton,
   ListItemText,
-  Typography,
+  Stack,
 } from '@mui/material';
 import React, { useState } from 'react';
 
@@ -34,20 +36,32 @@ export default function AsideDrawer({ list, icons }) {
             </ListItem>
           ))}
 
-          {icons.map(({ icon, props }, index) => {
-            return (
-              <ListItem key={index} disablePadding>
-                <ListItemButton>
-                  <Typography
-                    component={'img'}
-                    variant="img"
-                    src={icon}
-                    {...props}
+          <Grid item container>
+            <Stack
+              direction={'row'}
+              spacing={2}
+              ml={4}
+              alignItems={'center'}
+              fontSize={'2rem'}
+            >
+              {icons.map((icon, index) => {
+                return icon?.MUIIcon ? (
+                  <icon.MUIIcon
+                    key={index}
+                    htmlColor="#029183"
+                    fontSize="inherit"
                   />
-                </ListItemButton>
-              </ListItem>
-            );
-          })}
+                ) : (
+                  <Box
+                    component={'img'}
+                    src={icon.icon}
+                    {...icon.props}
+                    key={index}
+                  />
+                );
+              })}
+            </Stack>
+          </Grid>
         </List>
       </Drawer>
 
