@@ -1,37 +1,23 @@
 export const aboutScreen = [
   {
-    box1: [
-      { id: 1 },
-      { icon: '' },
-      { title: 'Talk With Experts' },
-      {
-        content:
-          "Whether you're living in India or abroad, easily connect with country's top doctors in all specialty areas",
-      },
-    ],
+    id: 1,
+    icon: '/assets/icons/homepage/talk-with-experts.svg',
+    title: 'Talk With Experts',
+    content:
+      "Whether you're living in India or abroad, easily connect with country's top doctors in all specialty areas",
   },
-
   {
-    box2: [
-      { id: 2 },
-      { icon: '' },
-      { title: 'Talk With Doctors' },
-      {
-        content:
-          "Whether you're living in India or abroad, easily connect with country's top doctors in all specialty areas",
-      },
-    ],
+    id: 2,
+    icon: '/assets/icons/homepage/talk-with-doctors.svg',
+    title: 'Talk With Doctors',
+    content:
+      "Whether you're living in India or abroad, easily connect with country's top doctors in all specialty areas",
   },
-
   {
-    box1: [
-      { id: 1 },
-      { icon: '' },
-      { title: 'Schedule Consultation' },
-      {
-        content:
-          "Whether you're living in India or abroad, easily connect with country's top doctors in all specialty areas",
-      },
-    ],
+    id: 3,
+    icon: '/assets/icons/homepage/schedule-consultation.svg',
+    title: 'Schedule Consultation',
+    content:
+      "Whether you're living in India or abroad, easily connect with country's top doctors in all specialty areas",
   },
 ];

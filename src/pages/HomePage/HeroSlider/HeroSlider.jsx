@@ -1,15 +1,20 @@
-import { Container, Grid, Stack, Typography } from '@mui/material';
+import { Container, Grid, Stack, Typography, useTheme } from '@mui/material';
 import { NavigateNext } from '@mui/icons-material';
 
 import CommonIconButton from '../../../components/Common/CommonIconButton';
-import CommonButton from '../../../components/Common/CommonButton';
 
 import styles from './HeroSlider.module.scss';
+import WhiteBgBtn from '../../../components/Common/WhiteBgBtn';
 
 export default function HeroSlider() {
+  const theme = useTheme();
+
   return (
     <>
-      <Container maxWidth="xxl" id={styles.screenTopBar}>
+      <Container
+        maxWidth="xxl"
+        sx={{ background: theme.palette.defaultGradient }}
+      >
         <Grid container mt={10.8} justifyContent={'center'}>
           <Grid item xs={12} md={12} lg={8}>
             <Stack
@@ -72,10 +77,9 @@ export default function HeroSlider() {
                   Practo app. Connect with doctors online, available 24/7, from
                   the comfort of your home.
                 </Typography>
-                <CommonButton
+                <WhiteBgBtn
                   children={'Schedule call'}
                   size="large"
-                  color="others"
                   sx={{ fontWeight: 600, color: 'text.primary' }}
                   // disableElevation={true}
                 />

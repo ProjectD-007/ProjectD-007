@@ -1,12 +1,13 @@
-import { Box, Button, Grid, Stack, Typography } from '@mui/material';
+import { Box, Button, Grid, Stack, Typography, useTheme } from '@mui/material';
 import { aboutScreen } from './Data';
 
 import { HiArrowLongRight } from 'react-icons/hi2';
 
-import styles from './AboutSection.module.scss';
 import { Fragment } from 'react';
 
 export default function AboutSection() {
+  const theme = useTheme();
+
   return (
     <>
       <Grid
@@ -16,27 +17,18 @@ export default function AboutSection() {
         mt={6}
         mb={4}
       >
-        <Grid item xs={12} md={8} lg={6} textAlign={'center'}>
+        <Grid item xs={12} md={8} lg={4} textAlign={'center'}>
           <Typography
             component={'h3'}
             variant="h3"
-            className={styles.title}
             color={'secondary'}
             fontWeight={600}
+            mb={2}
           >
-            Consult top{' '}
-            <Typography component={'span'} variant="span" color={'primary'}>
-              doctors
-            </Typography>{' '}
-            online for any health concern
+            Whole-patient, high-quality virtual primary care
           </Typography>
 
-          <Typography
-            component={'h6'}
-            variant="h6"
-            color={'secondary.light'}
-            my={3}
-          >
+          <Typography component={'h6'} variant="h6" color={'secondary.light'}>
             Private online consultations with verified doctors in all
             specialists
           </Typography>
@@ -46,7 +38,7 @@ export default function AboutSection() {
       <Grid container justifyContent={'center'} mb={4} p={2}>
         <Grid item xs={12} lg={8}>
           <Stack
-            gap={2}
+            gap={6}
             sx={{
               flexDirection: {
                 xs: 'column',
@@ -57,12 +49,17 @@ export default function AboutSection() {
             {aboutScreen.map((box, index) => {
               return (
                 <Fragment key={index}>
-                  <Box className={styles.highlightBox} p={3} borderRadius={5}>
+                  <Box
+                    p={3}
+                    borderRadius={5}
+                    boxShadow={theme.palette.defaultBoxShadowCards}
+                  >
                     <Typography
                       component={'img'}
-                      src={'/assets/images/profile.svg'}
+                      src={box.icon}
                       alt="Title name here"
                       width={'80px'}
+                      mb={2}
                     />
 
                     <Typography
@@ -88,7 +85,7 @@ export default function AboutSection() {
                       variant="text"
                       size="large"
                       endIcon={<HiArrowLongRight />}
-                      sx={{ fontWeight: 600 }}
+                      sx={{ fontWeight: 600, p: 0 }}
                     >
                       Connect
                     </Button>

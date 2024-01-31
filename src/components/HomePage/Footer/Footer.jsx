@@ -9,7 +9,7 @@ import {
   Typography,
   styled,
 } from '@mui/material';
-import CommonButton from '../../Common/CommonButton';
+import PrimaryBtn from '../../Common/PrimaryBtn';
 
 import { Person } from '@mui/icons-material';
 import { FaFacebookF, FaTwitter, FaLinkedinIn } from 'react-icons/fa6';
@@ -73,7 +73,7 @@ export default function Footer() {
             <Typography
               variant="p"
               component={'p'}
-              color={'others.main'}
+              color={'primary.light'}
               fontWeight={600}
               fontSize={20}
             >
@@ -92,7 +92,7 @@ export default function Footer() {
             <StyledOutlineInput
               startAdornment={<Person htmlColor="#FFFFFF3D" />}
             />
-            <CommonButton
+            <PrimaryBtn
               children="Subscribe"
               color="others"
               size="medium"
@@ -134,7 +134,7 @@ export default function Footer() {
                 variant="h6"
                 component={'span'}
                 fontWeight={600}
-                color={'others.main'}
+                color={'primary.light'}
               >
                 Doc4u
               </Typography>
@@ -142,7 +142,7 @@ export default function Footer() {
               <Typography
                 variant="span"
                 component={'span'}
-                color={'others.main'}
+                color={'primary.light'}
                 my={3}
               >
                 We growing up your business with personal AI manager.

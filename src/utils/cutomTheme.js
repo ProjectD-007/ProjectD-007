@@ -12,7 +12,6 @@ export const theme = createTheme({
     },
 
     others: {
-      main: '#F4FFFB',
       white: '#fff',
     },
 
@@ -22,9 +21,10 @@ export const theme = createTheme({
       white: '#EDEEFC',
     },
 
-    buttonBackgrounds: {
-      primary: 'yellow',
-    },
+    defaultBoxShadowCards: '0px 4px 31px 0px #00000014',
+
+    defaultGradient:
+      'linear-gradient(180deg, #008687 0%, #0EA7AD 0.01%, #008D7B 100%)',
   },
   components: {
     MuiButton: {
@@ -35,6 +35,11 @@ export const theme = createTheme({
       styleOverrides: {
         root: {
           textTransform: 'none',
+          paddingTop: '11px',
+          paddingBottom: '11px',
+          paddingLeft: '32px',
+          paddingRight: '32px',
+          fontSize: '14px',
         },
       },
     },

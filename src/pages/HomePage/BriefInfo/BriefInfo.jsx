@@ -1,5 +1,5 @@
 import { Grid, Typography } from '@mui/material';
-import CommonButton from '../../../components/Common/CommonButton';
+import PrimaryBtn from '../../../components/Common/PrimaryBtn';
 
 export default function BriefInfo() {
   return (
@@ -39,7 +39,7 @@ export default function BriefInfo() {
               product is another way to personalize the testimonial.
             </Typography>
 
-            <CommonButton
+            <PrimaryBtn
               children={'Schdule Call'}
               size="large"
               variant="contained"

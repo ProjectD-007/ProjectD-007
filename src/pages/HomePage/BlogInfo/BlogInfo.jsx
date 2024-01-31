@@ -1,4 +1,4 @@
-import { Box, Card, CardContent, Grid, Typography } from '@mui/material';
+import { Box, Card, CardContent, Grid, Stack, Typography } from '@mui/material';
 import { BlogData } from './Data';
 
 export default function BlogInfo() {
@@ -13,22 +13,37 @@ export default function BlogInfo() {
         py={6}
       >
         <Grid container justifyContent={'center'} mb={5}>
-          <Grid item xs={12} md={8} lg={4}>
-            <Typography
-              component={'h2'}
-              variant="h3"
-              fontSize={40}
-              fontWeight={600}
-              color={'secondary'}
-              mb={2}
-            >
-              Our Product related Blog
-            </Typography>
+          <Grid item xs={12} md={8} lg={5.5} xl={4.5}>
+            <Stack direction={'row'} spacing={2}>
+              <Typography
+                component={'img'}
+                src="/assets/icons/homepage/talk-with-experts.svg"
+                width={'70px'}
+                alignSelf={'flex-end'}
+              />
 
-            <Typography variant="p" component={'p'} color={'secondary.light'}>
-              Personalizing the testimonial makes it easier for readers to be
-              empathetic. Adding before and after images,.
-            </Typography>
+              <Box>
+                <Typography
+                  component={'h2'}
+                  variant="h3"
+                  fontSize={40}
+                  fontWeight={600}
+                  color={'secondary'}
+                  mb={2}
+                >
+                  Our Product related Blog
+                </Typography>
+
+                <Typography
+                  variant="p"
+                  component={'p'}
+                  color={'secondary.light'}
+                >
+                  Personalizing the testimonial makes it easier for readers to
+                  be empathetic. Adding before and after images,.
+                </Typography>
+              </Box>
+            </Stack>
           </Grid>
         </Grid>
 

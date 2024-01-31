@@ -9,12 +9,28 @@ import {
   Toolbar,
   Typography,
   useMediaQuery,
+  useScrollTrigger,
+  useTheme,
 } from '@mui/material';
 
 import styles from './Header.module.scss';
-import { useTheme } from '@emotion/react';
 import AsideDrawer from './AsideDrawer';
 import { AccountBalanceWallet, Notifications } from '@mui/icons-material';
+import React from 'react';
+
+function ElevationScroll(props) {
+  const { children, window } = props;
+
+  const trigger = useScrollTrigger({
+    disableHysteresis: true,
+    threshold: 0,
+    target: window ? window() : undefined,
+  });
+
+  return React.cloneElement(children, {
+    elevation: trigger ? 4 : 0,
+  });
+}
 
 const navigationLinks = [
   { title: 'Home', active: true },
@@ -76,69 +92,74 @@ export default function Header() {
   return (
     <>
       <CssBaseline />
-      <AppBar component={'nav'} sx={{ backgroundColor: '#F4FFFB' }}>
-        <Toolbar>
-          <Container
-            sx={{
-              maxWidth: {
-                lg: 'lg',
-                xl: 'xl',
-              },
-            }}
-            className={styles.headerArea}
-          >
-            <Stack
-              direction={'row'}
-              justifyContent={'space-between'}
-              alignItems={'center'}
+      <ElevationScroll>
+        <AppBar
+          component={'nav'}
+          sx={{ backgroundColor: theme.palette.primary.light }}
+        >
+          <Toolbar>
+            <Container
+              sx={{
+                maxWidth: {
+                  lg: 'lg',
+                  xl: 'xl',
+                },
+              }}
+              className={styles.headerArea}
             >
-              <Box className={styles.logoArea}>
-                <Typography
-                  variant="img"
-                  component={'img'}
-                  src="/assets/images/logo.webp"
-                />
-              </Box>
+              <Stack
+                direction={'row'}
+                justifyContent={'space-between'}
+                alignItems={'center'}
+              >
+                <Box className={styles.logoArea}>
+                  <Typography
+                    variant="img"
+                    component={'img'}
+                    src="/assets/images/logo.webp"
+                  />
+                </Box>
 
-              {!isMatch ? (
-                <Stack
-                  direction={'row'}
-                  component={'nav'}
-                  className={styles.navigation}
-                >
-                  <List
-                    sx={{
-                      color: 'secondary.main',
-                      display: 'flex',
-                      alignItems: 'center',
-                      justifyContent: 'space-between',
-                    }}
+                {!isMatch ? (
+                  <Stack
+                    direction={'row'}
+                    component={'nav'}
+                    className={styles.navigation}
                   >
-                    {navigationLinks.map((item, index) => (
-                      <ListItem
-                        key={index}
-                        id={item?.active && 'activeLinkColor'}
-                        color="secondary"
-                        sx={{
-                          fontSize: '16px',
-                          fontWeight: 600,
-                          width: 'auto',
-                        }}
-                      >
-                        {item.title}
-                      </ListItem>
-                    ))}
+                    <List
+                      sx={{
+                        color: 'secondary.main',
+                        display: 'flex',
+                        alignItems: 'center',
+                        justifyContent: 'space-between',
+                      }}
+                    >
+                      {navigationLinks.map((item, index) => (
+                        <ListItem
+                          key={index}
+                          id={item?.active && 'activeLinkColor'}
+                          color="secondary"
+                          sx={{
+                            fontSize: '16px',
+                            fontWeight: 600,
+                            width: 'auto',
+                          }}
+                        >
+                          {item.title}
+                        </ListItem>
+                      ))}
 
-                    {RenderIcons()}
-                  </List>
-                </Stack>
-              ) : (
-                <AsideDrawer list={navigationLinks} icons={icons} />
-              )}
-            </Stack>
-          </Container>
-        </Toolbar>
-      </AppBar>
+                      {RenderIcons()}
+                    </List>
+                  </Stack>
+                ) : (
+                  <AsideDrawer list={navigationLinks} icons={icons} />
+                )}
+              </Stack>
+            </Container>
+          </Toolbar>
+        </AppBar>
+      </ElevationScroll>
     </>
   );
 }
