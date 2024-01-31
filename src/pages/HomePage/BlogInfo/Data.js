@@ -1,17 +1,17 @@
 export const BlogData = [
   {
     id: 1,
-    img: '/assets/images/homepage/blog1.png',
-    title: 'How Citizen Developers Can Transform Your Company',
+    img: '/assets/images/homepage/blog1.webp',
+    title: 'How To keep ur pets Healthy',
   },
   {
-    id: 1,
-    img: '/assets/images/homepage/blog2.png',
-    title: 'One Year to Remember: 2022 — A Celebration of Talent',
+    id: 2,
+    img: '/assets/images/homepage/blog2.webp',
+    title: ' How to maintain ur Reproductive Health',
   },
   {
-    id: 1,
-    img: '/assets/images/homepage/blog3.png',
-    title: 'What Companies Need to Know About Logistics Software Development',
+    id: 3,
+    img: '/assets/images/homepage/blog3.webp',
+    title: 'how to loose weight by consulting to nutritionist',
   },
 ];

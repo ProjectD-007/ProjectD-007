@@ -9,7 +9,6 @@ export default function BlogInfo() {
         justifyContent={'center'}
         textAlign={'center'}
         p={2}
-        bgcolor={'primary.light'}
         py={6}
       >
         <Grid container justifyContent={'center'} mb={5}>
@@ -59,7 +58,7 @@ export default function BlogInfo() {
                       src={data.img}
                     />
                     <CardContent>
-                      <Typography gutterBottom variant="h5" component="div">
+                      <Typography gutterBottom variant="h6" component="div">
                         {data.title}
                       </Typography>
                     </CardContent>

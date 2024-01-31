@@ -43,7 +43,7 @@ export default function BriefInfo() {
               children={'Schdule Call'}
               size="large"
               variant="contained"
-              sx={{ fontWeight: 600, color: 'others', mt: 5 }}
+              sx={{ color: 'others', mt: 5 }}
               // disableElevation={true}
             />
           </Grid>
@@ -51,7 +51,7 @@ export default function BriefInfo() {
             <Typography
               variant="img"
               component={'img'}
-              src="/assets/images/homepage/briefInfo.png"
+              src="/assets/images/homepage/briefInfo.webp"
               width={'100%'}
             />
           </Grid>

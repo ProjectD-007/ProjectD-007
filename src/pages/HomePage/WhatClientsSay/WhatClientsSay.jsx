@@ -21,7 +21,7 @@ export default function WhatClientsSay() {
           <Grid item xs={12} md={6}>
             <Typography
               component={'img'}
-              src="/assets/images/homepage/whatClientsSay.png"
+              src="/assets/images/homepage/whatClientsSay.webp"
             />
           </Grid>
           <Grid item xs={12} md={6} alignSelf={'center'}>

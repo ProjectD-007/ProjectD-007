@@ -40,6 +40,7 @@ export const theme = createTheme({
           paddingLeft: '32px',
           paddingRight: '32px',
           fontSize: '14px',
+          fontWeight: 600,
         },
       },
     },

@@ -15,6 +15,7 @@ export default function PrimaryBtn({
         sx={{
           background: theme.palette.defaultGradient,
           ...sx,
+          color: '#fff',
         }}
         disabled={isDisabled}
         {...rest}

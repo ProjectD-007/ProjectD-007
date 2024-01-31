@@ -15,15 +15,15 @@ import { Person } from '@mui/icons-material';
 import { FaFacebookF, FaTwitter, FaLinkedinIn } from 'react-icons/fa6';
 
 const StyledOutlineInput = styled(OutlinedInput)(() => ({
-  '& input': {
-    padding: '11px auto',
-  },
   '&': {
     border: '1px solid #FFFFFF3D',
     borderRadius: '15px',
   },
   '& fieldset': {
     border: '1px solid #FFFFFF3D',
+  },
+  '& ::placeholder': {
+    color: '#fff',
   },
 }));
 
@@ -90,13 +90,14 @@ export default function Footer() {
             justifyContent={'center'}
           >
             <StyledOutlineInput
+              placeholder="Enter your email"
               startAdornment={<Person htmlColor="#FFFFFF3D" />}
             />
             <PrimaryBtn
               children="Subscribe"
               color="others"
               size="medium"
-              sx={{ py: '0.6rem', px: '2rem', fontWeight: 600 }}
+              sx={{ py: '0.6rem', px: '2rem' }}
             />
           </Grid>
         </Grid>

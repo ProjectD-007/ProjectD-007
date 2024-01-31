@@ -2,6 +2,7 @@ import AboutSection from './AboutSection/AboutSection';
 import BlogInfo from './BlogInfo/BlogInfo';
 import BriefInfo from './BriefInfo/BriefInfo';
 import HeroSlider from './HeroSlider/HeroSlider';
+import VetenaryBanner from './VetenaryBanner/VetenaryBanner';
 import WhatClientsSay from './WhatClientsSay/WhatClientsSay';
 
 export default function HomePage() {
@@ -9,8 +10,9 @@ export default function HomePage() {
     <>
       <HeroSlider />
       <AboutSection />
-      <WhatClientsSay />
+      <VetenaryBanner />
       <BriefInfo />
+      <WhatClientsSay />
       <BlogInfo />
     </>
   );
