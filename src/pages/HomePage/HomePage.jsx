@@ -1,19 +1,28 @@
-import AboutSection from './AboutSection/AboutSection';
-import BlogInfo from './BlogInfo/BlogInfo';
-import BriefInfo from './BriefInfo/BriefInfo';
-import HeroSlider from './HeroSlider/HeroSlider';
-import VetenaryBanner from './VetenaryBanner/VetenaryBanner';
-import WhatClientsSay from './WhatClientsSay/WhatClientsSay';
+import React from 'react';
+import Loader from '../../utils/Loader/Loader';
+
+const AboutSection = React.lazy(() => import('./AboutSection/AboutSection'));
+const BlogInfo = React.lazy(() => import('./BlogInfo/BlogInfo'));
+const BriefInfo = React.lazy(() => import('./BriefInfo/BriefInfo'));
+const HeroSlider = React.lazy(() => import('./HeroSlider/HeroSlider'));
+const VetenaryBanner = React.lazy(() =>
+  import('./VetenaryBanner/VetenaryBanner')
+);
+const WhatClientsSay = React.lazy(() =>
+  import('./WhatClientsSay/WhatClientsSay')
+);
 
 export default function HomePage() {
   return (
     <>
-      <HeroSlider />
-      <AboutSection />
-      <VetenaryBanner />
-      <BriefInfo />
-      <WhatClientsSay />
-      <BlogInfo />
+      <React.Suspense fallback={<Loader />}>
+        <HeroSlider />
+        <AboutSection />
+        <VetenaryBanner />
+        <BriefInfo />
+        <WhatClientsSay />
+        <BlogInfo />
+      </React.Suspense>
     </>
   );
 }
