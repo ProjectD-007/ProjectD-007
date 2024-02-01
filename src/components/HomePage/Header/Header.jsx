@@ -17,6 +17,7 @@ import styles from './Header.module.scss';
 import AsideDrawer from './AsideDrawer';
 import { AccountBalanceWallet, Notifications } from '@mui/icons-material';
 import React from 'react';
+import { Link } from 'react-router-dom';
 
 function ElevationScroll(props) {
   const { children, window } = props;
@@ -113,11 +114,13 @@ export default function Header() {
                 alignItems={'center'}
               >
                 <Box className={styles.logoArea}>
-                  <Typography
-                    variant="img"
-                    component={'img'}
-                    src="/assets/images/logo.webp"
-                  />
+                  <Link to={'/'}>
+                    <Typography
+                      variant="img"
+                      component={'img'}
+                      src="/assets/images/logo.webp"
+                    />
+                  </Link>
                 </Box>
 
                 {!isMatch ? (

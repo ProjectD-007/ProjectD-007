@@ -1,6 +1,7 @@
 import { Route, Routes } from 'react-router-dom';
 
 import { PublicRoutes } from './RouteConfig';
+import CommingSoon from '../components/Common/CommingSoon';
 
 export default function Index() {
   const RouteWithLayout = ({ layout: Layout, component: Component }) => {
@@ -31,5 +32,10 @@ export default function Index() {
       );
     });
   };
-  return <Routes>{GeneratePublicRoutes()}</Routes>;
+  return (
+    <Routes>
+      {GeneratePublicRoutes()}
+      <Route path="*" element={<CommingSoon />} key={'comming-soon'} />
+    </Routes>
+  );
 }

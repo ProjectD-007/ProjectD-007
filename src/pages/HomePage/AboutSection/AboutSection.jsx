@@ -1,5 +1,5 @@
 import { Fragment } from 'react';
-import { Link, useNavigate } from 'react-router-dom';
+import { Link } from 'react-router-dom';
 import { Box, Button, Grid, Stack, Typography, useTheme } from '@mui/material';
 import { HiArrowLongRight } from 'react-icons/hi2';
 
@@ -7,7 +7,6 @@ import { aboutScreen } from './Data';
 
 export default function AboutSection() {
   const theme = useTheme();
-  const navigate = useNavigate();
 
   return (
     <>
@@ -70,7 +69,7 @@ export default function AboutSection() {
                         fontWeight={600}
                         color={'secondary'}
                       >
-                        Talk With Experts
+                        {box.title}
                       </Typography>
 
                       <Typography
@@ -79,8 +78,7 @@ export default function AboutSection() {
                         color={'secondary.light'}
                         my={2}
                       >
-                        Whether you're living in India or abroad, easily connect
-                        with country's top doctors in all specialty areas
+                        {box.content}
                       </Typography>
 
                       <Button
