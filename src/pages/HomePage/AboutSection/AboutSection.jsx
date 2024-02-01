@@ -17,7 +17,7 @@ export default function AboutSection() {
         mt={6}
         mb={4}
       >
-        <Grid item xs={12} md={8} lg={4} textAlign={'center'}>
+        <Grid item xs={12} md={8} lg={6} textAlign={'center'}>
           <Typography
             component={'h3'}
             variant="h3"

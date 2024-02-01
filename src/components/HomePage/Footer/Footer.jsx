@@ -18,12 +18,13 @@ const StyledOutlineInput = styled(OutlinedInput)(() => ({
   '&': {
     border: '1px solid #FFFFFF3D',
     borderRadius: '15px',
+    color: '#fff',
   },
   '& fieldset': {
     border: '1px solid #FFFFFF3D',
   },
   '& ::placeholder': {
-    color: '#fff',
+    color: '#fff !important',
   },
 }));
 
