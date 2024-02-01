@@ -1,11 +1,15 @@
 import React from 'react';
 import Categories from './Categories';
 import { Box, Container, useTheme } from '@mui/material';
-const HeroSlider = React.lazy(() => import('./HeroSlider/HeroSlider'));
-const Loader = React.lazy(() => import('../../utils/Loader/Loader'));
+import Loader from '../../utils/Loader/Loader';
 
-export default function TalkWithExperts() {
+const HeroSlider = React.lazy(() =>
+  import('../../components/Common/HeroSlider')
+);
+
+export default function TalkWithDoctors() {
   const theme = useTheme();
+
   return (
     <>
       <React.Suspense fallback={<Loader />}>

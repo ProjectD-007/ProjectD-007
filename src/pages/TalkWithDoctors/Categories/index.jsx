@@ -47,31 +47,29 @@ export default function Categories() {
       <Grid container rowSpacing={6} columnSpacing={6}>
         {ExpertCategories.map((category) => {
           return (
-            <>
-              <Grid item xs={12} md={2}>
-                <StyledCard>
-                  <CardActionArea>
-                    <CardMedia
-                      component={'img'}
-                      image={category.imgPath}
-                      alt={category.title}
-                    />
+            <Grid item xs={12} md={2} key={category.id}>
+              <StyledCard>
+                <CardActionArea>
+                  <CardMedia
+                    component={'img'}
+                    image={category.imgPath}
+                    alt={category.title}
+                  />
 
-                    <CardContent>
-                      <Typography
-                        gutterBottom
-                        variant="h5"
-                        component="div"
-                        fontSize={'20px'}
-                        color={'secondary.main'}
-                      >
-                        {category.title}
-                      </Typography>
-                    </CardContent>
-                  </CardActionArea>
-                </StyledCard>
-              </Grid>
-            </>
+                  <CardContent>
+                    <Typography
+                      gutterBottom
+                      variant="h5"
+                      component="div"
+                      fontSize={'20px'}
+                      color={'secondary.main'}
+                    >
+                      {category.title}
+                    </Typography>
+                  </CardContent>
+                </CardActionArea>
+              </StyledCard>
+            </Grid>
           );
         })}
       </Grid>

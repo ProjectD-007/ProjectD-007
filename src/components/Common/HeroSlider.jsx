@@ -1,5 +1,5 @@
 import { Box, Grid, Stack, Typography } from '@mui/material';
-import PrimaryBtn from '../../../components/Common/PrimaryBtn';
+import PrimaryBtn from './PrimaryBtn';
 
 export default function HeroSlider() {
   return (
