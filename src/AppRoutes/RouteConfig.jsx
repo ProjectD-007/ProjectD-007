@@ -1,5 +1,11 @@
-import { HomePageLayout, HomePage } from './Components';
+import { HomePageLayout, HomePage, TalkWithExperts } from './Components';
 
 export const PublicRoutes = [
-  { path: '/', component: HomePage, layout: HomePageLayout, roules: [] },
+  { path: '/', component: HomePage, layout: HomePageLayout, roles: [] },
+  {
+    path: '/consulte-experts',
+    component: TalkWithExperts,
+    layout: HomePageLayout,
+    roles: [],
+  },
 ];

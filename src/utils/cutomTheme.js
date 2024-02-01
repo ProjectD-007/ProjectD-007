@@ -25,6 +25,8 @@ export const theme = createTheme({
 
     defaultGradient:
       'linear-gradient(180deg, #008687 0%, #0EA7AD 0.01%, #008D7B 100%)',
+    heroGradient:
+      'linear-gradient(92.04deg, rgba(253, 242, 205, 0.35) 4.86%, rgba(253, 242, 205, 0.0315) 100%)',
   },
   components: {
     MuiButton: {
@@ -41,6 +43,7 @@ export const theme = createTheme({
           paddingRight: '32px',
           fontSize: '14px',
           fontWeight: 600,
+          borderRadius: '8px',
         },
       },
     },

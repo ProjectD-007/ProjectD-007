@@ -1,12 +1,13 @@
+import { Fragment } from 'react';
+import { Link, useNavigate } from 'react-router-dom';
 import { Box, Button, Grid, Stack, Typography, useTheme } from '@mui/material';
-import { aboutScreen } from './Data';
-
 import { HiArrowLongRight } from 'react-icons/hi2';
 
-import { Fragment } from 'react';
+import { aboutScreen } from './Data';
 
 export default function AboutSection() {
   const theme = useTheme();
+  const navigate = useNavigate();
 
   return (
     <>
@@ -49,47 +50,49 @@ export default function AboutSection() {
             {aboutScreen.map((box, index) => {
               return (
                 <Fragment key={index}>
-                  <Box
-                    p={3}
-                    borderRadius={5}
-                    boxShadow={theme.palette.defaultBoxShadowCards}
-                  >
-                    <Typography
-                      component={'img'}
-                      src={box.icon}
-                      alt="Title name here"
-                      width={'80px'}
-                      mb={2}
-                    />
-
-                    <Typography
-                      component={'h5'}
-                      variant="h5"
-                      fontWeight={600}
-                      color={'secondary'}
+                  <Link to={box.route}>
+                    <Box
+                      p={3}
+                      borderRadius={5}
+                      boxShadow={theme.palette.defaultBoxShadowCards}
                     >
-                      Talk With Experts
-                    </Typography>
+                      <Typography
+                        component={'img'}
+                        src={box.icon}
+                        alt="Title name here"
+                        width={'80px'}
+                        mb={2}
+                      />
 
-                    <Typography
-                      component={'p'}
-                      variant="span"
-                      color={'secondary.light'}
-                      my={2}
-                    >
-                      Whether you're living in India or abroad, easily connect
-                      with country's top doctors in all specialty areas
-                    </Typography>
+                      <Typography
+                        component={'h5'}
+                        variant="h5"
+                        fontWeight={600}
+                        color={'secondary'}
+                      >
+                        Talk With Experts
+                      </Typography>
 
-                    <Button
-                      variant="text"
-                      size="large"
-                      endIcon={<HiArrowLongRight />}
-                      sx={{ fontWeight: 600, p: 0 }}
-                    >
-                      Connect
-                    </Button>
-                  </Box>
+                      <Typography
+                        component={'p'}
+                        variant="span"
+                        color={'secondary.light'}
+                        my={2}
+                      >
+                        Whether you're living in India or abroad, easily connect
+                        with country's top doctors in all specialty areas
+                      </Typography>
+
+                      <Button
+                        variant="text"
+                        size="large"
+                        endIcon={<HiArrowLongRight />}
+                        sx={{ fontWeight: 600, p: 0 }}
+                      >
+                        Connect
+                      </Button>
+                    </Box>
+                  </Link>
                 </Fragment>
               );
             })}

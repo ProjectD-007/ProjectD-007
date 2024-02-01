@@ -5,6 +5,7 @@ export const aboutScreen = [
     title: 'Talk With Experts',
     content:
       "Whether you're living in India or abroad, easily connect with country's top doctors in all specialty areas",
+    route: '/consulte-experts',
   },
   {
     id: 2,
@@ -12,6 +13,7 @@ export const aboutScreen = [
     title: 'Talk With Doctors',
     content:
       "Whether you're living in India or abroad, easily connect with country's top doctors in all specialty areas",
+    route: '/consulte-doctors',
   },
   {
     id: 3,
@@ -19,5 +21,6 @@ export const aboutScreen = [
     title: 'Schedule Consultation',
     content:
       "Whether you're living in India or abroad, easily connect with country's top doctors in all specialty areas",
+    route: '/schedule-consulation',
   },
 ];
