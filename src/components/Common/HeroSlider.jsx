@@ -1,7 +1,7 @@
 import { Box, Grid, Stack, Typography } from '@mui/material';
 import PrimaryBtn from './PrimaryBtn';
 
-export default function HeroSlider() {
+export default function HeroSlider({ data }) {
   return (
     <Grid container justifyContent={'center'}>
       <Grid item xs={12} md={8} lg={9} xl={9} alignSelf={'center'}>
@@ -13,7 +13,7 @@ export default function HeroSlider() {
             fontWeight={600}
             mb={2}
           >
-            Consult top doctors online for any health concern
+            {data.heroTitle ?? 'NA'}
           </Typography>
           <Stack
             direction={{ xs: 'column', sm: 'row' }}
@@ -66,12 +66,12 @@ export default function HeroSlider() {
         </Stack>
       </Grid>
 
-      <Grid item xs={12} md={4} lg={3} xl={3}>
+      <Grid item xs={12} md={4} lg={3} xl={3} alignSelf={'flex-end'}>
         <Box
           component={'img'}
-          src="/assets/images/talk-with-experts/hero.webp"
+          src={data.heroImage}
           alt="Talk with Docforyou experts"
-          width={'20rem'}
+          width={'100%'}
         />
       </Grid>
     </Grid>

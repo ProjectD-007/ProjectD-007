@@ -15,3 +15,9 @@ export const ExpertCategories = [
     imgPath: '/assets/images/placeholder-image.jpg',
   },
 ];
+
+export const heroData = {
+  id: '1',
+  heroTitle: 'Consult top doctors online for any health concern',
+  heroImage: '/assets/images/talk-with-experts/hero.webp',
+};

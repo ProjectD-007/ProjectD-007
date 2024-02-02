@@ -1,22 +1,26 @@
 import React from 'react';
 import Loader from '../../utils/Loader/Loader';
-import { Box, Container, useTheme } from '@mui/material';
+import { Box, Container, Grid } from '@mui/material';
+import { useTheme } from '@emotion/react';
 import HeroSlider from '../../components/Common/HeroSlider';
+import { HeroSlide } from './data';
 import Categories from './Categories';
-import { heroData } from './mockData/TalkWithExperts';
 
-export default function TalkWithExperts() {
+export default function TalkWithVetExperts() {
   const theme = useTheme();
 
   return (
     <React.Suspense fallback={<Loader />}>
       <Box mt={10.8} sx={{ background: theme.palette.heroGradient }}>
         <Container sx={{ maxWidth: { lg: 'lg', xl: 'xl' } }}>
-          <HeroSlider data={heroData} />
+          <HeroSlider data={HeroSlide} />
         </Container>
       </Box>
+
       <Container sx={{ maxWidth: { lg: 'lg', xl: 'xl' } }}>
-        <Categories />
+        <Grid container justifyContent={'center'}>
+          <Categories />
+        </Grid>
       </Container>
     </React.Suspense>
   );

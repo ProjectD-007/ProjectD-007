@@ -1,6 +1,7 @@
 import { Grid, Stack, Typography } from '@mui/material';
 import styles from './VetenaryBanner.module.scss';
 import PrimaryBtn from '../../../components/Common/PrimaryBtn';
+import { Link } from 'react-router-dom';
 
 export default function VetenaryBanner() {
   return (
@@ -35,7 +36,9 @@ export default function VetenaryBanner() {
               Personalizing the testimonial makes it easier for readers to be
             </Typography>
 
-            <PrimaryBtn children={'Schdule call'} />
+            <Link to="/consult-vet-experts">
+              <PrimaryBtn children={'Schdule call'} />
+            </Link>
           </Stack>
         </Grid>
       </Grid>

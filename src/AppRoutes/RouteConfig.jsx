@@ -3,18 +3,24 @@ import {
   HomePage,
   TalkWithExperts,
   TalkWithDoctors,
+  TalkWithVetExperts,
 } from './Components';
 
 export const PublicRoutes = [
-  { path: '/', component: HomePage, layout: HomePageLayout, roles: [] },
+  { path: '/', component: HomePage, layout: HomePageLayout },
   {
-    path: '/consulte-experts',
+    path: '/consult-experts',
     component: TalkWithExperts,
     layout: HomePageLayout,
   },
   {
-    path: '/consulte-doctors',
+    path: '/consult-doctors',
     component: TalkWithDoctors,
+    layout: HomePageLayout,
+  },
+  {
+    path: '/consult-vet-experts',
+    component: TalkWithVetExperts,
     layout: HomePageLayout,
   },
 ];
