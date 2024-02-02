@@ -4,6 +4,7 @@ import {
   TalkWithExperts,
   TalkWithDoctors,
   TalkWithVetExperts,
+  Consult,
 } from './Components';
 
 export const PublicRoutes = [
@@ -21,6 +22,11 @@ export const PublicRoutes = [
   {
     path: '/consult-vet-experts',
     component: TalkWithVetExperts,
+    layout: HomePageLayout,
+  },
+  {
+    path: '/consult-experts/consult',
+    component: Consult,
     layout: HomePageLayout,
   },
 ];

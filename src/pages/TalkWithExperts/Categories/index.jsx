@@ -9,6 +9,7 @@ import {
   styled,
 } from '@mui/material';
 import { ExpertCategories } from '../mockData/TalkWithExperts';
+import { Link } from 'react-router-dom';
 
 const StyledCard = styled(Card)({
   '&.MuiPaper-root': {
@@ -53,27 +54,29 @@ export default function Categories() {
         {ExpertCategories.map((category) => {
           return (
             <Grid item xs={12} md={2} key={category.id}>
-              <StyledCard>
-                <CardActionArea>
-                  <CardMedia
-                    component={'img'}
-                    image={category.imgPath}
-                    alt={category.title}
-                  />
+              <Link to={'consult'}>
+                <StyledCard>
+                  <CardActionArea>
+                    <CardMedia
+                      component={'img'}
+                      image={category.imgPath}
+                      alt={category.title}
+                    />
 
-                  <CardContent>
-                    <Typography
-                      gutterBottom
-                      variant="h5"
-                      component="div"
-                      fontSize={'20px'}
-                      color={'secondary.main'}
-                    >
-                      {category.title}
-                    </Typography>
-                  </CardContent>
-                </CardActionArea>
-              </StyledCard>
+                    <CardContent>
+                      <Typography
+                        gutterBottom
+                        variant="h5"
+                        component="div"
+                        fontSize={'20px'}
+                        color={'secondary.main'}
+                      >
+                        {category.title}
+                      </Typography>
+                    </CardContent>
+                  </CardActionArea>
+                </StyledCard>
+              </Link>
             </Grid>
           );
         })}

@@ -18,7 +18,13 @@ export const theme = createTheme({
     text: {
       primary: '#282828',
       secondary: '#B7BAC3',
+      light: '#626262',
+      dark: '#3C4852',
       white: '#EDEEFC',
+    },
+
+    misc: {
+      success: '#00DF98',
     },
 
     defaultBoxShadowCards: '0px 4px 31px 0px #00000014',
@@ -50,6 +56,12 @@ export const theme = createTheme({
 
     MuiOutlinedInput: {
       styleOverrides: {
+        root: {
+          '& input::placeholder': {
+            color: '#B7BAC3',
+            fontSize: '16px',
+          },
+        },
         input: {
           padding: '11px 16px',
         },
