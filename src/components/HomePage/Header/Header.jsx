@@ -18,6 +18,8 @@ import AsideDrawer from './AsideDrawer';
 import { AccountBalanceWallet, Notifications } from '@mui/icons-material';
 import React from 'react';
 import { Link } from 'react-router-dom';
+import { useDispatch } from 'react-redux';
+import { toggleLogin } from '../../../redux/reducers/homepage/homepage';
 
 function ElevationScroll(props) {
   const { children, window } = props;
@@ -43,12 +45,15 @@ const navigationLinks = [
 const icons = [
   {
     MUIIcon: Notifications,
+    title: 'notifications',
   },
   {
     MUIIcon: AccountBalanceWallet,
+    title: 'wallet',
   },
   {
     icon: '/assets/images/profile.svg',
+    title: 'profile',
     props: {
       width: '40px',
     },
@@ -58,6 +63,13 @@ const icons = [
 export default function Header() {
   const theme = useTheme();
   const isMatch = useMediaQuery(theme.breakpoints.down('985'));
+  const dispatch = useDispatch();
+
+  const handelMenu = (title) => {
+    if (title === 'profile') {
+      dispatch(toggleLogin());
+    }
+  };
 
   const RenderIcons = () => {
     return (
@@ -75,6 +87,7 @@ export default function Header() {
               htmlColor="#029183"
               fontSize="inherit"
               className={'cursor_pointer'}
+              onClick={() => handelMenu(icon.title)}
             />
           ) : (
             <Box
@@ -83,6 +96,7 @@ export default function Header() {
               {...icon.props}
               key={index}
               className="cursor_pointer"
+              onClick={() => handelMenu(icon.title)}
             />
           );
         })}
