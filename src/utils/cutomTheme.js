@@ -21,10 +21,12 @@ export const theme = createTheme({
       light: '#626262',
       dark: '#3C4852',
       white: '#EDEEFC',
+      danger: '#FF0000',
     },
 
     misc: {
       success: '#00DF98',
+      light: '#B7BAC3',
     },
 
     defaultBoxShadowCards: '0px 4px 31px 0px #00000014',
@@ -34,7 +36,21 @@ export const theme = createTheme({
     heroGradient:
       'linear-gradient(92.04deg, rgba(253, 242, 205, 0.35) 4.86%, rgba(253, 242, 205, 0.0315) 100%)',
   },
+  typography: {
+    fontFamily: `'Outfit', sans-serif`,
+  },
   components: {
+    MuiCssBaseline: {
+      styleOverrides: `
+      @font-face {
+        font-family: 'Outfit', sans-serif;
+        font-style: normal;
+        font-display: swap;
+        font-weight: 400;
+      }
+      `,
+    },
+
     MuiButton: {
       defaultProps: {
         disableRipple: true,
@@ -59,11 +75,30 @@ export const theme = createTheme({
         root: {
           '& input::placeholder': {
             color: '#B7BAC3',
-            fontSize: '16px',
+            fontSize: '14px',
           },
         },
         input: {
           padding: '11px 16px',
+        },
+      },
+    },
+
+    MuiFormLabel: {
+      styleOverrides: {
+        root: {
+          color: '#626262',
+          fontSize: '14px',
+        },
+      },
+    },
+
+    MuiDialog: {
+      styleOverrides: {
+        root: {
+          '& .MuiDialog-paper': {
+            borderRadius: '20px',
+          },
         },
       },
     },

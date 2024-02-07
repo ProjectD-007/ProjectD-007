@@ -1,5 +1,9 @@
 import React from 'react';
 import Loader from '../../utils/Loader/Loader';
+import { useDispatch, useSelector } from 'react-redux';
+import CommonDialog from '../../components/Common/CommonDialog';
+import Signin from '../Authentication/Signin/Signin';
+import { closeLogin } from '../../redux/slice/homepage/homepage';
 
 const AboutSection = React.lazy(() => import('./AboutSection/AboutSection'));
 const BlogInfo = React.lazy(() => import('./BlogInfo/BlogInfo'));
@@ -13,9 +17,19 @@ const WhatClientsSay = React.lazy(() =>
 );
 
 export default function HomePage() {
+  const homeState = useSelector((state) => state.homepage);
+  const dispatch = useDispatch();
+
   return (
     <>
       <React.Suspense fallback={<Loader />}>
+        <CommonDialog
+          fullWidth={true}
+          children={<Signin mode={homeState.signInMode} />}
+          open={homeState.viewSignin}
+          maxWidth="md"
+          handleClose={() => dispatch(closeLogin())}
+        />
         <HeroSlider />
         <AboutSection />
         <VetenaryBanner />

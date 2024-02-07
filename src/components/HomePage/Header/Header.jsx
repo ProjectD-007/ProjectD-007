@@ -1,3 +1,4 @@
+import React from 'react';
 import {
   AppBar,
   Box,
@@ -16,10 +17,9 @@ import {
 import styles from './Header.module.scss';
 import AsideDrawer from './AsideDrawer';
 import { AccountBalanceWallet, Notifications } from '@mui/icons-material';
-import React from 'react';
 import { Link } from 'react-router-dom';
 import { useDispatch } from 'react-redux';
-import { toggleLogin } from '../../../redux/reducers/homepage/homepage';
+import { toggleLogin } from '../../../redux/slice/homepage/homepage';
 
 function ElevationScroll(props) {
   const { children, window } = props;
