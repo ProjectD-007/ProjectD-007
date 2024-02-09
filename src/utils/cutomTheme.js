@@ -66,6 +66,7 @@ export const theme = createTheme({
           fontSize: '14px',
           fontWeight: 600,
           borderRadius: '8px',
+          lineHeight: 1.1,
         },
       },
     },

@@ -2,14 +2,14 @@ import React from 'react';
 import ConsultPage from '../../../components/Common/ConsultPage';
 import {
   Box,
+  Button,
   Container,
   Grid,
   IconButton,
   InputAdornment,
   OutlinedInput,
   Stack,
-  Tab,
-  Tabs,
+  styled,
 } from '@mui/material';
 
 import PrimaryBtn from '../../../components/Common/PrimaryBtn';
@@ -21,12 +21,12 @@ const Hero = {
     'Personalizing the testimonial makes it easier for readers to be empathetic. Adding before and after images,.',
 };
 
-function a11yProps(index) {
-  return {
-    id: `simple-tab-${index}`,
-    'aria-controls': `simple-tabpanel-${index}`,
-  };
-}
+const StyledButton = styled(Button)({
+  '&.MuiButton-root': {
+    padding: '8px 30px 7px 10px',
+    borderRadius: '30px',
+  },
+});
 
 const FilterIconbtn = () => {
   return (
@@ -51,11 +51,14 @@ const FilterIconbtn = () => {
 };
 
 export default function Consult() {
-  const [value, setValue] = React.useState(0);
-
-  const handleChange = (event, newValue) => {
-    setValue(newValue);
-  };
+  const availLanguages = [
+    'All',
+    'English',
+    'Hindi',
+    'Malayalam',
+    'Kannada',
+    'Tamil',
+  ];
 
   return (
     <>
@@ -65,7 +68,7 @@ export default function Consult() {
         </Box>
 
         <Grid container justifyContent={'center'}>
-          <Grid item xs={12} md={4} mb={5}>
+          <Grid item xs={12} md={4} mb={6}>
             <Stack direction={'row'} spacing={3}>
               <OutlinedInput
                 type={'text'}
@@ -90,17 +93,26 @@ export default function Consult() {
 
               <PrimaryBtn children={'Search'} />
             </Stack>
+          </Grid>
 
-            <Stack direction={'column'} mt={3}>
-              <Tabs
-                value={value}
-                onChange={handleChange}
-                aria-label="basic tabs example"
-              >
-                <Tab label="Item One" {...a11yProps(0)} />
-                <Tab label="Item Two" {...a11yProps(1)} />
-                <Tab label="Item Three" {...a11yProps(2)} />
-              </Tabs>
+          <Grid item xs={12} lg={10} mb={4}>
+            <Stack direction={'row'} spacing={3} justifyContent={'center'}>
+              {availLanguages.map((lang) => (
+                <StyledButton
+                  variant="outlined"
+                  sx={{ color: 'secondary.light' }}
+                  startIcon={
+                    <Box
+                      component={'img'}
+                      src="/assets/icons/consult/hindi.svg"
+                      alt="Consult Doc4u in Hindi"
+                      sx={{ p: 0, mr: 0.5 }}
+                    />
+                  }
+                >
+                  {lang}
+                </StyledButton>
+              ))}
             </Stack>
           </Grid>
         </Grid>
