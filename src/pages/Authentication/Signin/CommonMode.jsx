@@ -93,6 +93,7 @@ export default function CommonMode({ onChange, children, mode }) {
                       <Typography
                         component={'span'}
                         variant="span"
+                        className="cursorPointer"
                         sx={{
                           fontWeight: 400,
                           color: '#008687',
@@ -128,6 +129,7 @@ export default function CommonMode({ onChange, children, mode }) {
                       <Typography
                         component={'span'}
                         variant="span"
+                        className="cursorPointer"
                         sx={{
                           fontWeight: 400,
                           color: '#008687',

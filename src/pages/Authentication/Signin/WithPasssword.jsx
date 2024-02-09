@@ -27,6 +27,7 @@ export default function WithPasssword({ onChange }) {
           component={'span'}
           variant="span"
           fontWeight={600}
+          className="cursorPointer"
           style={{
             color: '#008687',
           }}

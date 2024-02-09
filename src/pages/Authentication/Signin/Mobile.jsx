@@ -67,6 +67,7 @@ export default function Mobile({ onChange }) {
             color: '#008687',
           }}
           onClick={() => onChange('password')}
+          className="cursorPointer"
         >
           password{' '}
         </Typography>
