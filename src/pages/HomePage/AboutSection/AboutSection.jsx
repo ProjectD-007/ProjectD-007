@@ -36,65 +36,55 @@ export default function AboutSection() {
       </Grid>
 
       <Grid container justifyContent={'center'} mb={4} p={2}>
-        <Grid item xs={12} lg={8}>
-          <Stack
-            gap={6}
-            sx={{
-              flexDirection: {
-                xs: 'column',
-                md: 'row',
-              },
-            }}
-          >
-            {aboutScreen.map((box, index) => {
-              return (
-                <Fragment key={index}>
-                  <Link to={box.route}>
-                    <Box
-                      p={3}
-                      borderRadius={5}
-                      boxShadow={theme.palette.defaultBoxShadowCards}
+        <Grid container item xs={12} lg={8} columnSpacing={5}>
+          {aboutScreen.map((box, index) => {
+            return (
+              <Grid item xs={12} sm={3.5} key={index}>
+                <Link to={box.route}>
+                  <Box
+                    p={3}
+                    borderRadius={5}
+                    boxShadow={theme.palette.defaultBoxShadowCards}
+                  >
+                    <Typography
+                      component={'img'}
+                      src={box.icon}
+                      alt="Title name here"
+                      width={'80px'}
+                      mb={2}
+                    />
+
+                    <Typography
+                      component={'h5'}
+                      variant="h5"
+                      fontWeight={600}
+                      color={'secondary'}
                     >
-                      <Typography
-                        component={'img'}
-                        src={box.icon}
-                        alt="Title name here"
-                        width={'80px'}
-                        mb={2}
-                      />
+                      {box.title}
+                    </Typography>
 
-                      <Typography
-                        component={'h5'}
-                        variant="h5"
-                        fontWeight={600}
-                        color={'secondary'}
-                      >
-                        {box.title}
-                      </Typography>
+                    <Typography
+                      component={'p'}
+                      variant="span"
+                      color={'secondary.light'}
+                      my={2}
+                    >
+                      {box.content}
+                    </Typography>
 
-                      <Typography
-                        component={'p'}
-                        variant="span"
-                        color={'secondary.light'}
-                        my={2}
-                      >
-                        {box.content}
-                      </Typography>
-
-                      <Button
-                        variant="text"
-                        size="large"
-                        endIcon={<HiArrowLongRight />}
-                        sx={{ fontWeight: 600, p: 0 }}
-                      >
-                        Connect
-                      </Button>
-                    </Box>
-                  </Link>
-                </Fragment>
-              );
-            })}
-          </Stack>
+                    <Button
+                      variant="text"
+                      size="large"
+                      endIcon={<HiArrowLongRight />}
+                      sx={{ fontWeight: 600, p: 0 }}
+                    >
+                      Connect
+                    </Button>
+                  </Box>
+                </Link>
+              </Grid>
+            );
+          })}
         </Grid>
       </Grid>
     </>

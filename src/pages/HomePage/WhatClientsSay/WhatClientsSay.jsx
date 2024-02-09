@@ -16,9 +16,10 @@ export default function WhatClientsSay() {
           container
           justifyContent={'center'}
           maxWidth={'lg'}
-          columnSpacing={2}
+          columnSpacing={6}
+          py={6}
         >
-          <Grid item xs={12} md={6}>
+          <Grid item xs={12} md={5.5}>
             <Typography
               component={'img'}
               src="/assets/images/homepage/whatClientsSay.webp"

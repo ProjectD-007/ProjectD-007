@@ -40,7 +40,16 @@ export default function Categories() {
             fontWeight={400}
           >
             Personalizing the testimonial makes it easier for readers to be
-            empathetic. Adding before and after images,.
+            empathetic.
+          </Typography>
+          <Typography
+            component={'p'}
+            variant="p"
+            fontSize={'20px'}
+            color={'secondary.light'}
+            fontWeight={400}
+          >
+            Adding before and after images,.
           </Typography>
         </Stack>
       </Grid>

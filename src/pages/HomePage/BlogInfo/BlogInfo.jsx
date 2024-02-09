@@ -14,12 +14,12 @@ export default function BlogInfo() {
         <Grid container justifyContent={'center'} mb={5}>
           <Grid item xs={12} md={8} lg={5.5} xl={4.5}>
             <Stack direction={'row'} spacing={2}>
-              <Typography
+              {/* <Typography
                 component={'img'}
                 src="/assets/icons/homepage/talk-with-experts.svg"
                 width={'70px'}
                 alignSelf={'flex-end'}
-              />
+              /> */}
 
               <Box>
                 <Typography
@@ -51,14 +51,19 @@ export default function BlogInfo() {
             return (
               <Grid item xs={12} md={3} lg={3} key={index}>
                 <Box>
-                  <Card>
+                  <Card elevation={0}>
                     <Typography
                       variant="img"
                       component={'img'}
                       src={data.img}
                     />
                     <CardContent>
-                      <Typography gutterBottom variant="h6" component="div">
+                      <Typography
+                        gutterBottom
+                        variant="h6"
+                        component="div"
+                        textAlign={'left'}
+                      >
                         {data.title}
                       </Typography>
                     </CardContent>

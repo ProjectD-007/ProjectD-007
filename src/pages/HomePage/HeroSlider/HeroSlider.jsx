@@ -56,7 +56,7 @@ export default function HeroSlider() {
         <Container maxWidth={'xl'} className={styles.wrapper}>
           <Container maxWidth="lg">
             <Grid container alignItems={'center'} mt={6}>
-              <Grid item xs={12} md={6} mt={3}>
+              <Grid item xs={12} md={6}>
                 <Typography
                   variant="h3"
                   component={'h1'}

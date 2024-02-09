@@ -37,9 +37,9 @@ function ElevationScroll(props) {
 
 const navigationLinks = [
   { title: 'Home', active: true },
-  { title: 'Talk with experts' },
-  { title: 'Talk with doctor' },
-  { title: 'Schedule consultation' },
+  { title: 'Talk with experts', path: '/consult-experts' },
+  { title: 'Talk with doctor', path: '/consult-doctors' },
+  { title: 'Schedule consultation', path: '/schedule-consulation' },
 ];
 
 const icons = [
@@ -152,18 +152,19 @@ export default function Header() {
                       }}
                     >
                       {navigationLinks.map((item, index) => (
-                        <ListItem
-                          key={index}
-                          id={item?.active && 'activeLinkColor'}
-                          color="secondary"
-                          sx={{
-                            fontSize: '16px',
-                            fontWeight: 600,
-                            width: 'auto',
-                          }}
-                        >
-                          {item.title}
-                        </ListItem>
+                        <Link key={index} to={item.path}>
+                          <ListItem
+                            id={item?.active && 'activeLinkColor'}
+                            color="secondary"
+                            sx={{
+                              fontSize: '16px',
+                              fontWeight: 600,
+                              width: 'auto',
+                            }}
+                          >
+                            {item.title}
+                          </ListItem>
+                        </Link>
                       ))}
 
                       {RenderIcons()}
